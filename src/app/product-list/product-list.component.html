@@ -1,0 +1,26 @@
+<h2>Usuaris</h2>
+
+<div class="container mt-5">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Cognom</th>
+        <th>Email</th>
+        <th>DNI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let user of users; paginate"
+        (click)="addToCart(user)"
+        [routerLink]="['/cart']"
+      >
+        <td>{{ user.name }}</td>
+        <td>{{ user.surname }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.id }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
